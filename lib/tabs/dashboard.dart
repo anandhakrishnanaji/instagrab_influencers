@@ -25,10 +25,10 @@ class SimplePieChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<LinearSales, int>> _createSampleData() {
     final data = [
-      new LinearSales(0, 100),
-      new LinearSales(1, 75),
-      new LinearSales(2, 25),
-      new LinearSales(3, 5),
+      // new LinearSales(0, 100),
+      new LinearSales(1, 55),
+      new LinearSales(2, 45),
+      // new LinearSales(3, 5),
     ];
 
     return [
@@ -76,10 +76,10 @@ class SimpleBarChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<OrdinalSales, String>> _createSampleData() {
     final data = [
-      new OrdinalSales('2014', 5),
-      new OrdinalSales('2015', 25),
-      new OrdinalSales('2016', 100),
-      new OrdinalSales('2017', 75),
+      new OrdinalSales('12a', 40),
+      new OrdinalSales('2a', 35),
+      new OrdinalSales('4a', 15),
+      new OrdinalSales('8p', 10),
     ];
 
     return [
@@ -127,10 +127,10 @@ class HorizontalBarChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<OrdinalSales, String>> _createSampleData() {
     final data = [
-      new OrdinalSales('2014', 5),
-      new OrdinalSales('2015', 25),
-      new OrdinalSales('2016', 100),
-      new OrdinalSales('2017', 75),
+      new OrdinalSales('18-24', 40),
+      new OrdinalSales('25-35', 35),
+      new OrdinalSales('36-45', 15),
+      new OrdinalSales('46-60', 10),
     ];
 
     return [
@@ -249,7 +249,7 @@ class _DashboardState extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    'assets/images/order.png',
+                    'assets/order.png',
                     height: 60,
                     width: 60,
                   ),
@@ -274,7 +274,7 @@ class _DashboardState extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Image.asset(
-                    'assets/images/sales.png',
+                    'assets/sales.png',
                     height: 60,
                     width: 60,
                   ),
@@ -324,7 +324,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   Image.asset(
-                    'assets/images/rating.png',
+                    'assets/rating.png',
                     height: 60,
                     width: 60,
                   ),
@@ -355,14 +355,90 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                   Image.asset(
-                    'assets/images/pending.png',
+                    'assets/pending.png',
                     height: 60,
                     width: 60,
                   ),
                 ]),
           ),
           // onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => ShopItemsPage())),
-        )
+        ),
+        _buildTile(Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Text('Gender',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.0)),
+            ),
+            Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SimplePieChart.withSampleData()),
+            ),
+          ],
+        )),
+        _buildTile(Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Text('Age Range',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.0)),
+            ),
+            Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: HorizontalBarChart.withSampleData()),
+            ),
+          ],
+        )),
+        _buildTile(Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Text('Top Locations',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.0)),
+            ),
+            Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: HorizontalBarChart.withSampleData()),
+            ),
+          ],
+        )),
+        _buildTile(Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: Text('Followers',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20.0)),
+            ),
+            Expanded(
+              child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: SimpleBarChart.withSampleData()),
+            ),
+          ],
+        ))
       ],
       staggeredTiles: [
         StaggeredTile.extent(2, 300.0),
@@ -370,6 +446,10 @@ class _DashboardState extends State<Dashboard> {
         StaggeredTile.extent(1, 180.0),
         StaggeredTile.extent(2, 110.0),
         StaggeredTile.extent(2, 110.0),
+        StaggeredTile.extent(2, 260.0),
+        StaggeredTile.extent(2, 260.0),
+        StaggeredTile.extent(2, 260.0),
+        StaggeredTile.extent(2, 260.0),
       ],
     );
   }

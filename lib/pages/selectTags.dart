@@ -10,7 +10,20 @@ class SelectTags extends StatefulWidget {
 }
 
 class _SelectTagsState extends State<SelectTags> {
-  List<Map> _shapes;
+  List<String> _shapes = [
+    'Fashion',
+    'Shoes',
+    'Men\'s Fashion',
+    'Women\'s Fashion',
+    'Watches',
+    'Food',
+    'Tech',
+    'Sports',
+    'Fitness',
+    'Gym',
+    'Art',
+    'Gaming'
+  ];
   List<int> _selectIndex = [];
 
   @override
@@ -66,7 +79,7 @@ class _SelectTagsState extends State<SelectTags> {
                       borderRadius: BorderRadius.circular(20)),
                   child: Center(
                     child: Text(
-                      _shapes[index]['name'],
+                      _shapes[index],
                       style: TextStyle(
                           color: _hasit ? Colors.white : Colors.black,
                           fontSize: 20),

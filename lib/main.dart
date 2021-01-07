@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './pages/additionalDetails.dart';
+import './pages/change-accountdetailsPage.dart';
+import './pages/change-phonepage.dart';
+import './pages/changeEmailPage.dart';
+import './pages/loginPage.dart';
+import './pages/offerDetailsPage.dart';
+import './pages/productDetailsPage.dart';
+import './pages/selectTags.dart';
 
 import './pages/homePage.dart';
 
@@ -38,7 +46,17 @@ class MyApp extends StatelessWidget {
             //     TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
             bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
           )),
-      routes: {"/": (ctx) => Home()},
+      routes: {
+        "/": (ctx) => LoginPage(),
+        ChangeAccountDetails.routeName: (ctx) => ChangeAccountDetails(),
+        ChangeEmail.routeName: (ctx) => ChangeEmail(),
+        ChangePhone.routeName: (ctx) => ChangePhone(),
+        RegistrationPage.routeName: (ctx) => RegistrationPage(),
+        OrderDetailsPage.routeName: (ctx) => OrderDetailsPage(),
+        ShowProductDetailsPage.routeName: (ctx) => ShowProductDetailsPage(),
+        SelectTags.routeName: (ctx) => SelectTags(),
+        Home.routeName: (ctx) => Home()
+      },
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:instagrab_influencers/pages/productDetailsPage.dart';
 
 class ProductList extends StatefulWidget {
   @override
@@ -7,7 +8,28 @@ class ProductList extends StatefulWidget {
 }
 
 class _ProductListState extends State<ProductList> {
-  List<Map> posts = [];
+  List<Map> posts = [
+    {
+      'id': '32',
+      'image320':
+          'https://vidooly.com/blog/wp-content/uploads/2019/05/usaamah.jpg',
+      'name': 'Raymond Men\'s Comfort Edition',
+      'offer_price': '13,0000',
+      'actual_price': '13,000',
+      'rating': '5',
+      'order_count': '1498'
+    },
+    {
+      'id': '35',
+      'image320':
+          'https://static.nc-myus.com/images/pub/www/uploads/image/2758c4b4f5714d55974edede913ee04f/Sania_Garg_1.PNG',
+      'name': 'Seemati Women\'s Top',
+      'offer_price': '5,000',
+      'actual_price': '5,000',
+      'rating': '4.5',
+      'order_count': '1987'
+    }
+  ];
 
   Widget build(BuildContext context) {
     return Container(
@@ -45,19 +67,11 @@ class _ProductListState extends State<ProductList> {
               subtitle: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Column(
-                      children: [
-                        Text(
-                          "₹ ${posts[index]['offer_price']}",
-                          style: TextStyle(color: Colors.green),
-                        ),
-                        Text(
-                          "₹ ${posts[index]['actual_price']}",
-                          style: TextStyle(
-                              decoration: TextDecoration.lineThrough,
-                              color: Colors.pink),
-                        )
-                      ],
+                    Text(
+                      "₹ ${posts[index]['actual_price']}",
+                      style: TextStyle(
+                          decoration: TextDecoration.lineThrough,
+                          color: Colors.green),
                     ),
                     Column(
                       children: [

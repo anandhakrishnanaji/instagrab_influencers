@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:instagrab_influencers/tabs/dashboard.dart';
+import 'package:instagrab_influencers/tabs/offerList.dart';
+import 'package:instagrab_influencers/tabs/productList.dart';
+import 'package:instagrab_influencers/tabs/profilePage.dart';
 
 final GlobalKey<ScaffoldState> homeKey = new GlobalKey<ScaffoldState>();
 
@@ -19,10 +23,10 @@ class HomeState extends State<Home> {
   }
 
   final List<Widget> _widgets = [
-    // DashBoard(),
-    // MyWebsitesPage(),
-    // ProductList(),
-    // ProfilePage()
+    Dashboard(),
+    ProductList(),
+    OfferList(),
+    ProfilePage()
   ];
   final List<String> _title = [
     'Dashboard',
@@ -44,10 +48,9 @@ class HomeState extends State<Home> {
       appBar: AppBar(
         elevation: 3,
         title: Text(_title[selectedIndex]),
+        automaticallyImplyLeading: false,
       ),
-      body: Center(
-        child: Text('Hello'),
-      ),
+      body: _widgets[selectedIndex],
       bottomNavigationBar: BottomAppBar(
         child: Container(
           margin: EdgeInsets.only(left: 12.0, right: 12.0),
@@ -57,11 +60,7 @@ class HomeState extends State<Home> {
             children: List.generate(
                 _bottomAppBar.length,
                 (index) => Padding(
-                      padding: index == 1
-                          ? EdgeInsets.only(right: 25)
-                          : index == 2
-                              ? EdgeInsets.only(left: 25)
-                              : EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
                       child: IconButton(
                         onPressed: () => updateTabSelection(index),
                         iconSize: 27.0,
