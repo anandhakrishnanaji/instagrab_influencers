@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instagrab_influencers/pages/additionalDetails.dart';
 import 'package:instagrab_influencers/pages/homePage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -69,7 +70,8 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ],
                   ),
-                  onPressed: () => Navigator.pushNamed(context, Home.routeName),
+                  onPressed: () =>
+                      Navigator.pushNamed(context, RegistrationPage.routeName),
                 ),
               )
             ],

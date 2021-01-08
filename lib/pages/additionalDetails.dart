@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagrab_influencers/pages/homePage.dart';
+import 'package:instagrab_influencers/pages/selectTags.dart';
 
 class RegistrationPage extends StatefulWidget {
   static const routeName = '/registrationPage';
@@ -164,18 +166,25 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 SizedBox(
                                   height: 15,
                                 ),
-                                Container(
-                                  height: 50,
-                                  padding: EdgeInsets.symmetric(horizontal: 20),
-                                  decoration:
-                                      BoxDecoration(color: Colors.grey[300]),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Text('Select Tags'),
-                                      Icon(Icons.navigate_next)
-                                    ],
+                                InkWell(
+                                  onTap: () => Navigator.pushNamed(
+                                      context, SelectTags.routeName),
+                                  child: Container(
+                                    height: 50,
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 20),
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey[300],
+                                        borderRadius:
+                                            BorderRadius.circular(20)),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Text('Select Tags'),
+                                        Icon(Icons.navigate_next)
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
@@ -268,7 +277,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                         onPressed: () {
                                           _saveform();
 
-                                          if (_isValid) Navigator.of(context);
+                                          Navigator.of(context)
+                                              .pushNamed(Home.routeName);
                                         },
                                       ),
                                     ),
