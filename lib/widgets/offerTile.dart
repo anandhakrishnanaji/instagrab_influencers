@@ -26,13 +26,13 @@ class OfferTile extends StatelessWidget {
         ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [Text('₹ $price'), Text('For $customerName')],
+          children: [Text('₹ 34,799'), Text('For $customerName')],
         ),
         trailing: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[Text(date), Text("Status: oombal")],
+            children: <Widget>[Text(date), Text("Status: Active")],
           ),
         ),
       ),

@@ -43,9 +43,8 @@ class _ProductListState extends State<ProductList> {
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
             child: ListTile(
               onTap: () {
-                Navigator.of(context).pushNamed(
-                    ShowProductDetailsPage.routeName,
-                    arguments: posts[index]['id']);
+                Navigator.of(context)
+                    .pushNamed(Proddeta.routeName, arguments: posts[index]);
               },
               isThreeLine: true,
               contentPadding: EdgeInsets.all(5),

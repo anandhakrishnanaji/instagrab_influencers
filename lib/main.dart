@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:instagrab_influencers/pages/orderDetailsPage.dart';
 import './pages/additionalDetails.dart';
 import './pages/change-accountdetailsPage.dart';
 import './pages/change-phonepage.dart';
 import './pages/changeEmailPage.dart';
 import './pages/loginPage.dart';
-import './pages/offerDetailsPage.dart';
 import './pages/productDetailsPage.dart';
 import './pages/selectTags.dart';
 
@@ -52,8 +52,8 @@ class MyApp extends StatelessWidget {
         ChangeEmail.routeName: (ctx) => ChangeEmail(),
         ChangePhone.routeName: (ctx) => ChangePhone(),
         RegistrationPage.routeName: (ctx) => RegistrationPage(),
-        OrderDetailsPage.routeName: (ctx) => OrderDetailsPage(),
-        ShowProductDetailsPage.routeName: (ctx) => ShowProductDetailsPage(),
+        Orderdeta.routeName: (ctx) => Orderdeta(),
+        Proddeta.routeName: (ctx) => Proddeta(),
         SelectTags.routeName: (ctx) => SelectTags(),
         Home.routeName: (ctx) => Home()
       },

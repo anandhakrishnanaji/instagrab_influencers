@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:instagrab_influencers/widgets/offerTile.dart';
+import '../pages/orderDetailsPage.dart';
 
 class OfferList extends StatefulWidget {
   @override
@@ -45,12 +46,17 @@ class _OfferListState extends State<OfferList> {
               : ListView.builder(
                   itemCount: posts.length,
                   itemBuilder: (context, index) {
-                    return OfferTile(
-                      url: posts[index]['image320'],
-                      customerName: posts[index]['customer_name'],
-                      date: posts[index]['date'].toString(),
-                      productName: posts[index]['product_name'],
-                      price: posts[index]['total'].toString(),
+                    return InkWell(
+                      onTap: () => Navigator.pushNamed(
+                          context, Orderdeta.routeName,
+                          arguments: posts[index]),
+                      child: OfferTile(
+                        url: posts[index]['image320'],
+                        customerName: posts[index]['customer_name'],
+                        date: posts[index]['date'].toString(),
+                        productName: posts[index]['product_name'],
+                        price: posts[index]['total'].toString(),
+                      ),
                     );
                   },
                 ),
